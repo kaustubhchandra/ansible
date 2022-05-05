@@ -13,4 +13,4 @@
             - job_name: 'node_exporter_metrics'
               scrape_interval: 5s
               static_configs:
-            - targets: ['3.110.120.438:9100']
+            - targets: ['noob:9100']
