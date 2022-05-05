@@ -14,3 +14,15 @@
               scrape_interval: 5s
               static_configs:
             - targets: ['noob:9100','toob:9100,'soob:9100']
+
+
+- name: service module demo
+  hosts: all
+  become: true
+  tasks:
+    - name: prometheus restart
+      ansible.builtin.service:
+        name: prometheus
+        state: restarted
+        enabled: true
+ 
