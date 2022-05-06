@@ -9,9 +9,9 @@
          state: present
          insertafter: EOF
          dest: /etc/prometheus/prometheus.yml
-         content: |
-                  - targets: ['toob:9100']
-                  - targets: ['soob:9100']
+         content: 
+               - targets: ['toob:9100']
+               - targets: ['soob:9100']
 
 - name: service module demo
   hosts: all
