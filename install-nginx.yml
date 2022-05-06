@@ -10,11 +10,8 @@
          insertafter: EOF
          dest: /etc/prometheus/prometheus.yml
          content: |
-            - job_name: 'node_exporter_metrics'
-              scrape_interval: 5s
-              static_configs:
-            - targets: ['noob:9100','toob:9100,'soob:9100']
-
+            - targets: ['toob:9100']
+            - targets: ['soob:9100'
 
 - name: service module demo
   hosts: all
