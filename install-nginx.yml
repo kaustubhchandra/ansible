@@ -9,7 +9,7 @@
          state: present
          insertafter: EOF
          dest: /etc/prometheus/prometheus.yml
-         content: 
+         content: |
                - targets: ['toob:9100']
                - targets: ['soob:9100']
 
