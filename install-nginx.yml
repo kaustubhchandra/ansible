@@ -3,16 +3,17 @@
   hosts: all
   user: root
 
-  tasks:
-     - name: nrpe command defination
+  tasks: 
+     - name: insert/update eth0 configuration stanza in /etc/network/interfaces
+        (it might be better to copy files into /etc/network/interfaces.d/)
        blockinfile:
-         state: present
-         insertafter: EOF
-         dest: /etc/prometheus/prometheus.yml
-         content: |
-               - targets: ['toob:9100']
-               - targets: ['soob:9100']
-
+         path: /etc/prometheus/prometheus.yml
+         block: |
+          # iface eth0 inet static
+              - targets: ['toob:9100']
+              - targets: ['soob:9100']
+      
+      
 - name: service module demo
   hosts: all
   become: true
